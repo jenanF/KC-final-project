@@ -1,8 +1,33 @@
 MainWidget:
 
 <MainWidget>:
+
   Image:
-    source: "
+    source: "nextdestination.png"
+    
+    width: self.parent.width
+    height: self.parent.width
+    #hight: dp(600)
+   # width: dp(600)
+    pos: 5,450
+  
+
+  Button:
+    #background_color: 0,0,0,0
+    size: 170,120
+    pos: 380,330
+    Image:
+      source: "usa.png"
+      center_x: self.parent.center_x
+      center_y: self.parent.center_y
+      pos: self.parent.pos
+      size: 150,150
+
+  
+    
+
+
+
   Label:
-    text: "helooooooooooooooooo its meeeeeeeeeeeeeee"
-    pos: 300,100
+    text: "choose a country"
+    pos: 260,450

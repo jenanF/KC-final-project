@@ -1,33 +1,144 @@
-MainWidget:
+ScreenManager:
+  MainWidget:
+  UkScreen:
 
 <MainWidget>:
-
-  Image:
-    source: "nextdestination.png"
+  BoxLayout:
     
-    width: self.parent.width
-    height: self.parent.width
-    #hight: dp(600)
-   # width: dp(600)
-    pos: 5,450
-  
-
-  Button:
-    #background_color: 0,0,0,0
-    size: 170,120
-    pos: 380,330
-    Image:
-      source: "usa.png"
-      center_x: self.parent.center_x
-      center_y: self.parent.center_y
-      pos: self.parent.pos
-      size: 150,150
-
-  
+    GridLayout:
+      cols:1
+      rows:3
+      Image:
+        source: "nextdestination.png"
     
+        width: self.parent.width
+        height: self.parent.width
+        pos: 5,450
+
+      Label:
+        text: "choose a country"
+        pos: 260,450
+  
+  BoxLayout:
+    
+    GridLayout:
+      cols:2
+      rows:3
+      size: 400,300
+      spacing: 10,10
+      pos: 0,30
+      Button:
+        #background_color: 0,0,0,0
+        size: 10,10
+        
+        Image:
+          source: "italy.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 180,180
+    
+      Button:
+        #background_color: 0,0,0,0
+        id: uk
+        size: 10,10
+        on_release:
+          app.root.current= "ukk"
+          print("clicked clicked")
+    
+        Image:
+          source: "uk.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 180,180
+      
+      Button:
+        #background_color: 0,0,0,0
+        id: canada
+        size: 10,10
+    
+        Image:
+          source: "canada.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 180,180
+
+      Button:
+        #background_color: 0,0,0,0
+        id: france
+        size: 10,10
+    
+        Image:
+          source: "france.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 180,180
+
+      Button:
+       # background_color: 0,0,0,0
+        id: korea
+        size: 10,10
+    
+        Image:
+          source: "southkorea.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 180,180
+
+      Button:
+        # background_color: 0,0,0,0
+        id: japan
+        size: 10,10
+     
+        Image:
+          source: "japan.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 180,180
 
 
 
-  Label:
-    text: "choose a country"
-    pos: 260,450
+<UkScreen>:
+  name: "ukk"
+  
+  GridLayout:
+    cols:1
+    rows:5
+    spacing: 10,10
+    Label:
+      text: "Welcome to UK"
+
+    Button:
+      name: "airways"
+      text: "airways"
+      Image:
+        source:"airway.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size: 300,300
+    
+    Button:
+      name: "information"
+      text: "airways"
+      Image:
+        source:"location.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size: 300,300
+    
+    Button:
+      name: "money"
+      text: "airways"
+      Image:
+        source:"coin.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size: 300,300
+
+    Button:
+      name: "educat"
+      text: "airways"
+      Image:
+        source:"study.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size: 300,300

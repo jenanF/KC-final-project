@@ -24,6 +24,7 @@ Next Destination
 jenan faisal almulla
 
 ### Project Name
+Next Destination
 
 # Idea
 Problem and solutions if found 

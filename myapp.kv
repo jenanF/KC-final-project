@@ -1,6 +1,7 @@
 ScreenManager:
   MainWidget:
   UkScreen:
+  CurrnciesScreen:
 
 <MainWidget>:
   BoxLayout:
@@ -128,6 +129,8 @@ ScreenManager:
     Button:
       name: "money"
       text: "airways"
+      on_release:
+        app.root.current= "curncy"
       Image:
         source:"coin.png"
         center_x: self.parent.center_x
@@ -142,3 +145,65 @@ ScreenManager:
         center_x: self.parent.center_x
         center_y: self.parent.center_y
         size: 300,300
+
+
+<CurrnciesScreen>:
+  name: "curncy"
+  GridLayout:
+    cols:5
+    rows:12
+
+    Label:
+      text:root.title_curncy
+
+    Label:
+      text:"python"
+
+    Label:
+      text:"jenan"
+
+    Label:
+      text:"great"
+
+    Label:
+      text:"hello"
+
+    Label:
+      text:"cooks"
+
+    Label:
+      text:"python"
+
+    Label:
+      text:"python"
+
+    Label:
+      text:"python"
+
+    Label:
+      text:"python"
+
+    Label:
+      text:"python"
+
+    Label:
+      text:"python"
+
+    Label:
+      text:"python"
+
+    Label:
+      text:"python"
+
+    Label:
+      text:"python"
+
+    Label:
+      text:"python"
+
+    Label:
+      text:"python"
+
+    Label:
+      text:"python"
+  

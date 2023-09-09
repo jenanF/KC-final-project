@@ -44,11 +44,12 @@ class CurrnciesScreen(Screen):
     print(title_value)
 
 class ConvertorScreen(Screen):
-    from_ = input("from ").upper()
-    to_ = input("to ").upper()
-    amount = float(input("amount "))
-    convert = requests.get(f"https://api.frankfurter.app/latest?amount={amount}&from={from_}&to={to_}")
-    print(f"{amount}  {from_} is {convert.json()['rates'][to_]}  {to_}")
+    pass
+   # from_ = "USD"
+    #to_ = "EUR"
+    #amount = 0
+    #convert = requests.get(f"https://api.frankfurter.app/latest?amount={amount}&from={from_}&to={to_}")
+    #print(f"{amount}  {from_} is {convert.json()['rates'][to_]}  {to_}")
 
 
 

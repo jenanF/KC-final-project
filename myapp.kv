@@ -2,6 +2,7 @@ ScreenManager:
   MainWidget:
   UkScreen:
   CurrnciesScreen:
+  ConvertorScreen:
 
 <MainWidget>:
   BoxLayout:
@@ -130,7 +131,7 @@ ScreenManager:
       name: "money"
       text: "airways"
       on_release:
-        app.root.current= "curncy"
+        app.root.current= "convert"
       Image:
         source:"coin.png"
         center_x: self.parent.center_x
@@ -206,4 +207,16 @@ ScreenManager:
 
     Label:
       text:"python"
+
+<ConvertorScreen>:
+  name: "convert"
+  TextInput:
+    id: froms
+    multiline: False
+    size: 10,10
+  
+  TextInput:
+    id: froms
+    multiline: False
+    size: 10,10
   

@@ -57,6 +57,11 @@ class AirwaysScreen(Screen):
 class LocationsScreen(Screen):
     pass
 
+class EducatScreen(Screen):
+    pass
+
+class UniUkScreen(Screen):# DID NOT ADD IT TO KV YET + DID NOT START WORKING ON IT YET
+    pass
 
 
 

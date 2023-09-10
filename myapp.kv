@@ -5,6 +5,7 @@ ScreenManager:
   ConvertorScreen:
   AirwaysScreen:
   LocationsScreen:
+  EducatScreen:
 
 <MainWidget>:
   GridLayout:
@@ -144,6 +145,8 @@ ScreenManager:
     Button:
       name: "educat"
       text: "airways"
+      on_release:
+        app.root.current= "studies"
       Image:
         source:"study.png"
         center_x: self.parent.center_x
@@ -373,6 +376,33 @@ ScreenManager:
         center_x: self.parent.center_x
         center_y: self.parent.center_y
         size: 300,300
+
+<EducatScreen>:
+  name:"studies"
+
+  GridLayout:
+    cols:1
+    rows:2
+    spacing: 10,10
+
+    Button:
+      name: "airways"
+      text: "airways"
+      on_release:
+        app.root.current= "airwayss"
+      Image:
+        source:"universityy.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size: 500,500
+    
+    Button:
+      text: "airways"
+      Image:
+        source:"schools.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size: 500,500
 
 
   

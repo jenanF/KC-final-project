@@ -3,25 +3,24 @@ ScreenManager:
   UkScreen:
   CurrnciesScreen:
   ConvertorScreen:
+  AirwaysScreen:
+  LocationsScreen:
 
 <MainWidget>:
-  BoxLayout:
+  GridLayout:
+    cols:1
+    rows:3
+    Image:
+      source: "nextdestination.png"
     
-    GridLayout:
-      cols:1
-      rows:3
-      Image:
-        source: "nextdestination.png"
-    
-        width: self.parent.width
-        height: self.parent.width
-        pos: 5,450
+      width: self.parent.width
+      height: self.parent.width
+      pos: 5,450
 
       Label:
         text: "choose a country"
         pos: 260,450
   
-  BoxLayout:
     
     GridLayout:
       cols:2
@@ -30,7 +29,7 @@ ScreenManager:
       spacing: 10,10
       pos: 0,30
       Button:
-        #background_color: 0,0,0,0
+        background_color: 0,0,0,0
         size: 10,10
         
         Image:
@@ -40,7 +39,7 @@ ScreenManager:
           size: 180,180
     
       Button:
-        #background_color: 0,0,0,0
+        background_color: 0,0,0,0
         id: uk
         size: 10,10
         on_release:
@@ -54,7 +53,7 @@ ScreenManager:
           size: 180,180
       
       Button:
-        #background_color: 0,0,0,0
+        background_color: 0,0,0,0
         id: canada
         size: 10,10
     
@@ -65,7 +64,7 @@ ScreenManager:
           size: 180,180
 
       Button:
-        #background_color: 0,0,0,0
+        background_color: 0,0,0,0
         id: france
         size: 10,10
     
@@ -76,7 +75,7 @@ ScreenManager:
           size: 180,180
 
       Button:
-       # background_color: 0,0,0,0
+        background_color: 0,0,0,0
         id: korea
         size: 10,10
     
@@ -87,7 +86,7 @@ ScreenManager:
           size: 180,180
 
       Button:
-        # background_color: 0,0,0,0
+        background_color: 0,0,0,0
         id: japan
         size: 10,10
      
@@ -112,6 +111,8 @@ ScreenManager:
     Button:
       name: "airways"
       text: "airways"
+      on_release:
+        app.root.current= "airwayss"
       Image:
         source:"airway.png"
         center_x: self.parent.center_x
@@ -121,6 +122,8 @@ ScreenManager:
     Button:
       name: "information"
       text: "airways"
+      on_release:
+        app.root.current= "locations"
       Image:
         source:"location.png"
         center_x: self.parent.center_x
@@ -154,8 +157,8 @@ ScreenManager:
     cols:5
     rows:12
 
-    Label:
-      text:root.title_curncy
+    #Label:
+      #text:root.title_curncy
 
     Label:
       text:"python"
@@ -210,13 +213,166 @@ ScreenManager:
 
 <ConvertorScreen>:
   name: "convert"
-  TextInput:
-    id: froms
-    multiline: False
-    size: 10,10
   
-  TextInput:
-    id: froms
-    multiline: False
-    size: 10,10
+  Button:
+    pos:10,800
+    size:0.01,0.01
+  
+  GridLayout:
+    cols:1
+    rows:2
+
+    GridLayout:
+      cols:1
+      rows:6
+      spacing: 20,20
+      padding:5
+      Image:
+        source:"coin.png"
+
+      TextInput:
+        id: froms
+        multiline: False
+        hint_test: "enter the curncy you want to convert from"
+        size: 2,2
+  
+      TextInput:
+        id: too
+        multiline: False
+        hint_test: "enter the curncy you want to convert to"
+        size: 2,2
+
+      TextInput:
+        id: amountt
+        multiline: False
+        hint_test: "enter the amount of money"
+        size: 2,2
+
+      Button:
+        text: "hello"
+
+      Label:
+        text:"result"
+
+<AirwaysScreen>:
+  name: "airwayss"
+
+  ScrollView:
+    do_scroll_x: False
+    do_scroll_y: True
+
+    GridLayout:
+      cols:1
+      spacing:10
+      size: 400,500
+      Button:
+        background_color: 255, 255, 255, 0.8
+        on_release: 
+          background_color= 188, 103, 147, 0.8
+        Image:
+          source:"BritishAirways.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 500,500
+
+      Button:
+        background_color: 255, 255, 255, 0.8
+        Image:
+          source:"qatarairways.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 500,500
+
+      Button:
+        background_color: 255, 255, 255, 0.8
+        Image:
+          source:"kuwaitairways.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 500,500
+
+      Button:
+        background_color: 255, 255, 255, 0.8
+        Image:
+          source:"JazeeraAirways.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 300,300
+
+
+<LocationsScreen>:
+  name:"locations"
+
+  GridLayout:
+    cols:2
+    spacing: 10,10
+
+    Button:
+      name: "airways"
+      text: "airways"
+      on_release:
+        app.root.current= "airwayss"
+      Image:
+        source:"vehicles.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size: 300,300
+    
+    Button:
+      name: "information"
+      text: "airways"
+      Image:
+        source:"cutlery.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size: 300,300
+    
+    Button:
+      name: "money"
+      text: "airways"
+      on_release:
+        app.root.current= "convert"
+      Image:
+        source:"planetearth.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size: 300,300
+
+    Button:
+      name: "educat"
+      text: "airways"
+      Image:
+        source:"hotel.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size: 300,300
+
+    Button:
+      name: "educat"
+      text: "airways"
+      Image:
+        source:"questionmark.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size: 300,300
+
+    Button:
+      name: "educat"
+      text: "airways"
+      Image:
+        source:"museum.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size: 300,300
+
+    Button:
+      name: "educat"
+      text: "airways"
+      Image:
+        source:"travelguide.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size: 300,300
+
+
   

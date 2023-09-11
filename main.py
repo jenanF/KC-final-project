@@ -52,12 +52,19 @@ class CurrnciesScreen(Screen):
    # print(title_value)
 
 class ConvertorScreen(Screen):
-    pass
-   # from_ = "USD"
-    #to_ = "EUR"
-    #amount = 0
-    #convert = requests.get(f"https://api.frankfurter.app/latest?amount={amount}&from={from_}&to={to_}")
-    #print(f"{amount}  {from_} is {convert.json()['rates'][to_]}  {to_}")
+
+    def convert(self):
+     
+     from_ = self.ids.fromss.text.upper()
+
+     to_ = self.ids.tooo.text.upper()
+
+     resultt = self.ids.res
+
+     amount = self.ids.amounts.text
+     convert = requests.get(f"https://api.frankfurter.app/latest?amount={amount}&from={from_}&to={to_}")
+     resultt.text = f"{convert.json()['rates'][to_] }  {to_}"
+     print(f"{amount}  {from_} is {convert.json()['rates'][to_]}  {to_}")
 
 class AirwaysScreen(Screen): #DONE
     pass

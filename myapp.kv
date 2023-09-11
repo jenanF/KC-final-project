@@ -120,6 +120,7 @@ ScreenManager:
     Button:
       name: "airways"
       text: "airways"
+      background_color: 0,0,0,0
       on_release:
         app.root.current= "airwayss"
         root.manager.transition.direction = "left"
@@ -132,6 +133,7 @@ ScreenManager:
     Button:
       name: "information"
       text: "airways"
+      background_color: 0,0,0,0
       on_release:
         app.root.current= "locations"
         root.manager.transition.direction = "left"
@@ -144,6 +146,7 @@ ScreenManager:
     Button:
       name: "money"
       text: "airways"
+      background_color: 0,0,0,0
       on_release:
         app.root.current= "convert"
         root.manager.transition.direction = "left"
@@ -156,6 +159,7 @@ ScreenManager:
     Button:
       name: "educat"
       text: "airways"
+      background_color: 0,0,0,0
       on_release:
         app.root.current= "studies"
         root.manager.transition.direction = "left"
@@ -228,46 +232,77 @@ ScreenManager:
 
 <ConvertorScreen>:
   name: "convert"
+  size_hint: 0.6,0.7
+  pos_hint: {'center_x': 0.5, 'center_y' : 0.5}
   
-  Button:
-    pos:10,800
-    size:0.01,0.01
   
   GridLayout:
     cols:1
-    rows:2
+    spacing: 10,20
 
     GridLayout:
-      cols:1
-      rows:6
-      spacing: 20,20
-      padding:5
-      Image:
-        source:"coin.png"
-
-      TextInput:
-        id: froms
-        multiline: False
-        hint_test: "enter the curncy you want to convert from"
-        size: 2,2
-  
-      TextInput:
-        id: too
-        multiline: False
-        hint_test: "enter the curncy you want to convert to"
-        size: 2,2
-
-      TextInput:
-        id: amountt
-        multiline: False
-        hint_test: "enter the amount of money"
-        size: 2,2
+      cols:3
+      size_hint_y: 0.5
 
       Button:
-        text: "hello"
+        background_color: 0,0,0,0
+        on_release:
+          app.root.current= "ukk"
+          root.manager.transition.direction = "right"
+        Image:
+          source: "backgo.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+      Button:
+        background_color: 0,0,0,0
+      Button:
+        background_color: 0,0,0,0
+
+
+    Image:
+      source: "exchangee.png"
+    
+    GridLayout:
+      cols:2
+      spacing: 10,10
 
       Label:
-        text:"result"
+        text: "from:"
+        font_size: 30
+      TextInput:
+        name: "from_"
+        id: fromss
+        size_hint: 0.2,0.2
+
+      Label:
+        text: "to:"
+        font_size: 30
+      TextInput:
+        name: "to_"
+        id: tooo
+        size_hint: 0.2,0.2 
+
+      Label:
+        text: "amount:"
+        font_size: 30
+        size_hint: 0.3,1
+
+      TextInput:
+        name: "amount"
+        id: amounts
+        size_hint: 0.7,0.2 
+
+    Button:
+      text: "convert"
+      size_hint: 0.1,0.5
+      on_press: root.convert()
+      
+    Label:
+      name: "resultt"
+      id: res
+      text: "result:"
+      font_size: 30
+
 
 <AirwaysScreen>:
   name: "airwayss"

@@ -12,6 +12,8 @@ ScreenManager:
   AvaitorHotelScreen:
   TransportationScreen:
   CarsScreen:
+  DakotaHotelScreen:
+  LondonHotelScreen:
 
 <MainWidget>:
   GridLayout:
@@ -274,6 +276,25 @@ ScreenManager:
       cols:1
       spacing:10
       size: 400,500
+
+      GridLayout:
+        cols:3
+        size_hint_y: 0.5
+        Button:
+          background_color: 0,0,0,0
+          on_release:
+            app.root.current= "ukk"
+            root.manager.transition.direction = "right"
+          Image:
+            source:"backgo.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            size: 100,100
+        Button:
+          background_color: 0,0,0,0
+        Button:
+          background_color: 0,0,0,0
+
       Button:
         background_color: 255, 255, 255, 0.8
         on_release: 
@@ -327,6 +348,25 @@ ScreenManager:
     cols:1
     spacing: 10,10
 
+    GridLayout:
+      cols:3
+      size_hint_y: 0.5
+      Button:
+        background_color: 0,0,0,0
+        on_release:
+          app.root.current= "ukk"
+          root.manager.transition.direction = "right"
+        Image:
+          source:"backgo.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 100,100
+      Button:
+        background_color: 0,0,0,0
+      Button:
+        background_color: 0,0,0,0
+      
+
     Button:
       background_color: 0,0,0,0
       on_release:
@@ -342,6 +382,7 @@ ScreenManager:
       background_color: 0,0,0,0
       on_release:
         app.root.current= "hotels"
+        root.manager.transition.direction = "left"
       Image:
         source:"hotel.png"
         center_x: self.parent.center_x
@@ -374,13 +415,31 @@ ScreenManager:
 
   GridLayout:
     cols:1
-    rows:2
     spacing: 10,10
+
+    GridLayout:
+      cols:3
+      size_hint_y: 0.5
+      Button:
+        background_color: 0,0,0,0
+        on_release:
+          app.root.current= "ukk"
+          root.manager.transition.direction = "right"
+        Image:
+          source:"backgo.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 100,100
+      Button:
+        background_color: 0,0,0,0
+      Button:
+        background_color: 0,0,0,0
 
     Button:
       background_color: 0,0,0,0
       on_release:
         app.root.current= "ukuni"
+        root.manager.transition.direction = "left"
       Image:
         source:"universityy.png"
         center_x: self.parent.center_x
@@ -400,11 +459,30 @@ ScreenManager:
   GridLayout:
     cols:1
 
+    GridLayout:
+      cols:3
+      size_hint_y: 0.5
+      Button:
+        background_color: 0,0,0,0
+        on_release:
+          app.root.current= "educat"
+          root.manager.transition.direction = "right"
+        Image:
+          source:"backgo.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 100,100
+      Button:
+        background_color: 0,0,0,0
+      Button:
+        background_color: 0,0,0,0
+
     Button:
       text: "OXF"
       background_color: 0,0,0,0
       on_release:
         app.root.current= "oxford"
+        root.manager.transition.direction = "left"
       Image:
         source:"oxfordlogo.png"
         center_x: self.parent.center_x
@@ -436,6 +514,24 @@ ScreenManager:
 
   GridLayout:
     cols:1
+
+    GridLayout:
+      cols:3
+      size_hint_y: 0.2
+      Button:
+        background_color: 0,0,0,0
+        on_release:
+          app.root.current= "ukuni"
+          root.manager.transition.direction = "right"
+        Image:
+          source:"backgo.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 100,100
+      Button:
+        background_color: 0,0,0,0
+      Button:
+        background_color: 0,0,0,0
 
   
     Image:
@@ -491,6 +587,7 @@ ScreenManager:
       background_color: 0,0,0,0
       on_release:
         app.root.current= "avtor"
+        root.manager.transition.direction = "left"
       Image:
         source:"AVIATOrwhitehotellogo.jpg"
         center_x: self.parent.center_x
@@ -500,6 +597,7 @@ ScreenManager:
       background_color: 0,0,0,0
       on_release:
         app.root.current= "avtor"
+        root.manager.transition.direction = "left"
       Label:
         text: "AVIATOR HOTEL"
         font_size: 30
@@ -517,6 +615,9 @@ ScreenManager:
 
     Button:
       background_color: 0,0,0,0
+      on_release:
+        app.root.current= "london"
+        root.manager.transition.direction = "left"
       Image:
         source:"Royal ancasterLondonHotelLogo.png"
         center_x: self.parent.center_x
@@ -525,6 +626,9 @@ ScreenManager:
 
     Button:
       background_color: 0,0,0,0
+      on_release:
+        app.root.current= "dako"
+        root.manager.transition.direction = "left"
       Label:
         text: "ROYAL ANCASTER LONDON"
         font_size: 21
@@ -542,6 +646,9 @@ ScreenManager:
 
     Button:
       background_color: 0,0,0,0
+      on_release:
+        app.root.current= "dako"
+        root.manager.transition.direction = "left"
       Image:
         source:"dakotahotellogo.png"
         center_x: self.parent.center_x
@@ -549,6 +656,9 @@ ScreenManager:
         size:300,300
     Button:
       background_color: 0,0,0,0
+      on_release:
+        app.root.current= "dako"
+        root.manager.transition.direction = "left"
       Label:
         text: "SOUTH LAWN HOTEL"
         font_size: 30
@@ -630,6 +740,7 @@ ScreenManager:
       background_color: 0,0,0,0
       on_release:
         app.root.current= "car"
+        root.manager.transition.direction = "left"
       Image:
         source:"carr.png"
         center_x: self.parent.center_x
@@ -689,6 +800,98 @@ ScreenManager:
         size: 230,230
 
 
+<DakotaHotelScreen>:
+  name:"dako"
+
+  GridLayout:
+    cols:1
+
+    Image:
+      source:"southlawnhotel.jpg"
+      size:200,200
+
+    GridLayout:
+      cols:2
+      rows:1
+      size_hint_y: 0.3
+
+      Button:
+        
+        background_color: 0,0,0,0
+        on_release:
+          import webbrowser
+          webbrowser.open("https://goo.gl/maps/u7sv4fhHwx26Lpnd8")
+        Image:
+          source:"googlemaps.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 100,100
+
+      Button:
+        
+        background_color: 0,0,0,0
+        on_release:
+          import webbrowser
+          webbrowser.open("https://dakotahotels.co.uk/")
+        Image:
+          source:"worldweb.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 100,100
+
+    
+    ScrollView:
+      padding_left:20
+      Label:
+        size_hint_y: None
+        height: self.texture_size[1]
+        text_size: self.width, None
+        text: root.dakotatext
+
+<LondonHotelScreen>:
+  name: "london"
+
+  GridLayout:
+    cols:1
+
+    Image:
+      source:"royallancasterlondon.jpg"
+      size:200,200
+
+    GridLayout:
+      cols:2
+      rows:1
+      size_hint_y: 0.3
+
+      Button:
+        background_color: 0,0,0,0
+        on_release:
+          import webbrowser
+          webbrowser.open("https://goo.gl/maps/u7sv4fhHwx26Lpnd8")
+        Image:
+          source:"googlemaps.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 100,100
+
+      Button:
+        background_color: 0,0,0,0
+        on_release:
+          import webbrowser
+          webbrowser.open("https://www.royallancaster.com/")
+        Image:
+          source:"worldweb.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 100,100
+
+    ScrollView:
+      padding_left:20
+      Label:
+        size_hint_y: None
+        height: self.texture_size[1]
+        text_size: self.width, None
+        text: root.lontext
 
     
     

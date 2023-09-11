@@ -102,6 +102,17 @@ Located on the first floor is Sky Bar, a cocktail bar designed with intention. S
 The design of event spaces at Aviator are well considered. The private entrance to the events wing and dedicated relaxing lounge areas provide direct access to the versatile meeting rooms. Used exclusively for tailored events and celebrations, the Sky Lounge overlooks awesome views of the airport and combines with the atrium to create a venue that promises to leave a lasting impression.'''
 
 
+class DakotaHotelScreen(Screen):
+    dakotatext= '''Dakota Hotels is a UK-based hotel brand with five locations, each with a brasserie-style Grill and cocktail Bars. Dakota Hotels first opened two boutique hotels near Edinburgh Airport in South Queensferry, and in Eurocentral, Motherwell South East of Glasgow. The brand has now expanded into Central Glasgow, Leeds, and Manchester. The brand was founded by Ken McCulloch and is owned by Evans Property Group.
+    The brand was named after the Douglas DC-3 aircraft introduced in 1936 for commercial air travel in the United States, which was designated the Dakota in Royal Air Force service.
+The press have reported celebrities as staying at Dakota Hotels including Hugh Jackman, Arnold Schwarzenegger, Katy Perry, Liam Gallagher, Stereophonics, The Stone Roses, Glenn Close, Melanie Brown, Noel Gallagher, Christian Slater, Gary Lineker, and Andy Murray.'''
+
+class LondonHotelScreen(Screen):
+    lontext = '''Royal Lancaster London is Hyde Park’s commanding mid-century architectural icon born and built in the swinging 60s. Our happy history has seen us hip, handsome and rolling with the times in our unrivalled London location. Today, here in the 21st century we’re proud of the knowledge and expertise we’ve gained over half a century as one of London’s leading hotels.
+
+We enjoy the liberty of being independent and the opportunity it gives us to express our unique and genuine personality. We take pride in having a conscientious, highly professional and happy team dedicated to delivering outstanding service and ensuring that every guest experience is delightfully memorable. Whether it’s the bees in the hives on our roof, the busy staff in our corridors and kitchens, or every guest that we welcome, ‘we always care’.'''
+
+
 class TransportationScreen(Screen):
     pass
 

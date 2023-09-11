@@ -59,16 +59,16 @@ class ConvertorScreen(Screen):
     #convert = requests.get(f"https://api.frankfurter.app/latest?amount={amount}&from={from_}&to={to_}")
     #print(f"{amount}  {from_} is {convert.json()['rates'][to_]}  {to_}")
 
-class AirwaysScreen(Screen):
+class AirwaysScreen(Screen): #DONE
     pass
 
 class LocationsScreen(Screen):
     pass
 
-class EducatScreen(Screen):
+class EducatScreen(Screen):#DONE
     pass
 
-class BritishAirwaysScreen(Screen):
+class BritishAirwaysScreen(Screen):#DONE
     pass
     #def show(self):
        # datePicker = MDDatePicker(year=2023,month=9,day=13)
@@ -83,7 +83,7 @@ class OxfordScreen(Screen):#done
       webbrowser.open("https://goo.gl/maps/u7sv4fhHwx26Lpnd8")
 
 
-class HotelsScreen(Screen):
+class HotelsScreen(Screen):#DONE
     pass
 
 class AvaitorHotelScreen(Screen):

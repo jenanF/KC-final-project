@@ -122,6 +122,7 @@ ScreenManager:
       text: "airways"
       on_release:
         app.root.current= "airwayss"
+        root.manager.transition.direction = "left"
       Image:
         source:"airway.png"
         center_x: self.parent.center_x
@@ -133,6 +134,7 @@ ScreenManager:
       text: "airways"
       on_release:
         app.root.current= "locations"
+        root.manager.transition.direction = "left"
       Image:
         source:"location.png"
         center_x: self.parent.center_x
@@ -144,6 +146,7 @@ ScreenManager:
       text: "airways"
       on_release:
         app.root.current= "convert"
+        root.manager.transition.direction = "left"
       Image:
         source:"coin.png"
         center_x: self.parent.center_x
@@ -155,6 +158,7 @@ ScreenManager:
       text: "airways"
       on_release:
         app.root.current= "studies"
+        root.manager.transition.direction = "left"
       Image:
         source:"study.png"
         center_x: self.parent.center_x
@@ -371,6 +375,7 @@ ScreenManager:
       background_color: 0,0,0,0
       on_release:
         app.root.current= "port"
+        root.manager.transition.direction = "left"
       Image:
         source:"vehicles.png"
         center_x: self.parent.center_x
@@ -465,7 +470,7 @@ ScreenManager:
       Button:
         background_color: 0,0,0,0
         on_release:
-          app.root.current= "educat"
+          app.root.current= "studies"
           root.manager.transition.direction = "right"
         Image:
           source:"backgo.png"
@@ -517,7 +522,7 @@ ScreenManager:
 
     GridLayout:
       cols:3
-      size_hint_y: 0.2
+      size_hint_y: 0.3
       Button:
         background_color: 0,0,0,0
         on_release:
@@ -729,8 +734,25 @@ ScreenManager:
 
   GridLayout:
     cols:1
-    rows:3
     spacing: 3,3
+
+    GridLayout:
+      cols:3
+      size_hint_y: 0.5
+      Button:
+        background_color: 0,0,0,0
+        on_release:
+          app.root.current= "locations"
+          root.manager.transition.direction = "right"
+        Image:
+          source:"backgo.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 100,100
+      Button:
+        background_color: 0,0,0,0
+      Button:
+        background_color: 0,0,0,0
     
     Label:
       text: "Transportation"
@@ -761,6 +783,24 @@ ScreenManager:
   name:"car"
   GridLayout:
     cols:1
+
+    GridLayout:
+      cols:3
+      size_hint_y: 0.5
+      Button:
+        background_color: 0,0,0,0
+        on_release:
+          app.root.current= "port"
+          root.manager.transition.direction = "right"
+        Image:
+          source:"backgo.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 100,100
+      Button:
+        background_color: 0,0,0,0
+      Button:
+        background_color: 0,0,0,0
 
     Button:
       text: "OXF"

@@ -83,7 +83,34 @@ class OxfordScreen(Screen):#done
       webbrowser.open("https://goo.gl/maps/u7sv4fhHwx26Lpnd8")
 
 
+class HotelsScreen(Screen):
+    pass
+
+class AvaitorHotelScreen(Screen):
+    avatext = '''Aviator is an independent hotel for elite travellers moving between London and the world's leading destinations.
+
+Located near London in Farnborough, Hampshire, Aviator opened in 2008 as one of the most striking design hotels in recent times. Innately stylish, Aviator binds the timeless glamour of aviation with seductive interiors and ultimate comfort.
+
+The bedroom interiors are contemporary yet rich and comfortable with walnut panelling, leather accented furniture and bathrooms with black glass walls, granite vanity tops and chrome finishing. Sky Suites amplify the indulgent personality of the hotel with walk in wardrobes, generous bath tubs, Missoni blankets and space to lounge surrounded by dark wood Venetian blinds. Guests can discreetly access the fitness studio from their rooms using a guest only stairwell at the north end of the building.
+
+The lobby and atrium of the hotel present One Eleven, the Brasserie and Sky Bar which overlooks the private Farnborough airport.
+
+Within the Brasserie sit two of the hotel's private dining rooms, exemplifying the intimacy and allure of the dining experience. The variety of fresh and classical dishes are accompanied by carefully selected boutique wines from producers around the world.
+
+Located on the first floor is Sky Bar, a cocktail bar designed with intention. Secluded black leather Rocket chairs and relaxing lounge areas create the ultimate place to sip our signature cocktails.
+
+The design of event spaces at Aviator are well considered. The private entrance to the events wing and dedicated relaxing lounge areas provide direct access to the versatile meeting rooms. Used exclusively for tailored events and celebrations, the Sky Lounge overlooks awesome views of the airport and combines with the atrium to create a venue that promises to leave a lasting impression.'''
+
+
+class TransportationScreen(Screen):
+    pass
+
+class CarsScreen(Screen):
+    pass
+
 class SiriScreen(Screen):
+    pass
+'''
     listener = sp.Recognizer()
     audio = pyttsx3.init()
     voices = audio.getProperty('voices')
@@ -103,7 +130,7 @@ class SiriScreen(Screen):
             
     except:
         pass
-
+'''
 
 class ScreenManager(ScreenManager):
     pass

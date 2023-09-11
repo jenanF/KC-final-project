@@ -8,6 +8,10 @@ ScreenManager:
   EducatScreen:
   UniUkScreen:
   OxfordScreen:
+  HotelsScreen:
+  AvaitorHotelScreen:
+  TransportationScreen:
+  CarsScreen:
 
 <MainWidget>:
   GridLayout:
@@ -273,7 +277,8 @@ ScreenManager:
       Button:
         background_color: 255, 255, 255, 0.8
         on_release: 
-          background_color= 188, 103, 147, 0.8
+          import webbrowser
+          webbrowser.open("https://www.britishairways.com/")
         Image:
           source:"BritishAirways.png"
           center_x: self.parent.center_x
@@ -283,6 +288,9 @@ ScreenManager:
 
       Button:
         background_color: 255, 255, 255, 0.8
+        on_release: 
+          import webbrowser
+          webbrowser.open("https://www.qatarairways.com/")
         Image:
           source:"qatarairways.png"
           center_x: self.parent.center_x
@@ -291,14 +299,20 @@ ScreenManager:
 
       Button:
         background_color: 255, 255, 255, 0.8
+        on_release: 
+          import webbrowser
+          webbrowser.open("https://www.emirates.com/")
         Image:
-          source:"kuwaitairways.png"
+          source:"emirateslogoairways.png"
           center_x: self.parent.center_x
           center_y: self.parent.center_y
           size: 500,500
 
       Button:
         background_color: 255, 255, 255, 0.8
+        on_release: 
+          import webbrowser
+          webbrowser.open("https://www.jazeeraairways.com/")
         Image:
           source:"JazeeraAirways.png"
           center_x: self.parent.center_x
@@ -310,49 +324,30 @@ ScreenManager:
   name:"locations"
 
   GridLayout:
-    cols:2
+    cols:1
     spacing: 10,10
 
     Button:
       background_color: 0,0,0,0
+      on_release:
+        app.root.current= "port"
       Image:
         source:"vehicles.png"
         center_x: self.parent.center_x
         center_y: self.parent.center_y
         size: 190,190
     
-    Button:
-      background_color: 0,0,0,0
-      Image:
-        source:"cutlery.png"
-        center_x: self.parent.center_x
-        center_y: self.parent.center_y
-        size: 190,190
-    
-    Button:
-      background_color: 0,0,0,0
-      Image:
-        source:"mountains.png"
-        center_x: self.parent.center_x
-        center_y: self.parent.center_y
-        size: 190,190
 
     Button:
       background_color: 0,0,0,0
+      on_release:
+        app.root.current= "hotels"
       Image:
         source:"hotel.png"
         center_x: self.parent.center_x
         center_y: self.parent.center_y
         size: 190,190
 
-
-    Button:
-      background_color: 0,0,0,0
-      Image:
-        source:"museum.png"
-        center_x: self.parent.center_x
-        center_y: self.parent.center_y
-        size: 190,190
 
     Button:
       background_color: 0,0,0,0
@@ -363,21 +358,16 @@ ScreenManager:
         center_y: self.parent.center_y
         size: 190,190
     
-    GridLayout:
-      cols:3
-      Button:
-        background_color: 0,0,0,0
+   
 
-      Button:
-        background_color: 0,0,0,0
-        Image:
-          source:"questionmark.png"
-          center_x: self.parent.center_x
-          center_y: self.parent.center_y
-          size: 190,190
+    Button:
+      background_color: 0,0,0,0
+      Image:
+        source:"questionmark.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size: 190,190
 
-      Button:
-        background_color: 0,0,0,0
 
 <EducatScreen>:
   name:"studies"
@@ -489,7 +479,217 @@ ScreenManager:
         height: self.texture_size[1]
         text_size: self.width, None
         text: root.oxftext
-          
+
+
+<HotelsScreen>:
+  name: "hotels"
+
+  GridLayout:
+    cols:2
+
+    Button:
+      background_color: 0,0,0,0
+      on_release:
+        app.root.current= "avtor"
+      Image:
+        source:"AVIATOrwhitehotellogo.jpg"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size:240,240
+    Button:
+      background_color: 0,0,0,0
+      on_release:
+        app.root.current= "avtor"
+      Label:
+        text: "AVIATOR HOTEL"
+        font_size: 30
+        size: 290,50
+        color: 0, 0, 0, 0.85
+        background_color: 255, 255, 255, 0.8
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        canvas.before:
+          Color:
+            rgba: self.background_color
+          Rectangle:
+            size: self.size 
+            pos: self.pos
+
+    Button:
+      background_color: 0,0,0,0
+      Image:
+        source:"Royal ancasterLondonHotelLogo.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size: 300,300
+
+    Button:
+      background_color: 0,0,0,0
+      Label:
+        text: "ROYAL ANCASTER LONDON"
+        font_size: 21
+        size: 290,50
+        background_color: 255, 255, 255, 0.8
+        color: 0, 0, 0, 0.85
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        canvas.before:
+          Color:
+            rgba: self.background_color
+          Rectangle:
+            size: self.size 
+            pos: self.pos
+
+    Button:
+      background_color: 0,0,0,0
+      Image:
+        source:"dakotahotellogo.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size:300,300
+    Button:
+      background_color: 0,0,0,0
+      Label:
+        text: "SOUTH LAWN HOTEL"
+        font_size: 30
+        size: 290,50
+        background_color: 255, 255, 255, 0.8
+        color: 0, 0, 0, 0.85
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        canvas.before:
+          Color:
+            rgba: self.background_color
+          Rectangle:
+            size: self.size 
+            pos: self.pos
+
+
+<AvaitorHotelScreen>:
+  name: "avtor"
+  GridLayout:
+    cols:1
+
+  
+    Image:
+      source:"AviatorHampshirehotel.jpg"
+      size:200,200
+
+    GridLayout:
+      cols:2
+      rows:1
+      size_hint_y: 0.3
+
+      Button:
+        
+        background_color: 0,0,0,0
+        on_release:
+          import webbrowser
+          webbrowser.open("https://goo.gl/maps/c4wceVeqdZFHP6km9")
+        Image:
+          source:"googlemaps.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 100,100
+
+      Button:
+        
+        background_color: 0,0,0,0
+        on_release:
+          import webbrowser
+          webbrowser.open("https://www.aviatorhampshire.com/")
+        Image:
+          source:"worldweb.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 100,100
+
+    
+    ScrollView:
+      padding_left:20
+      Label:
+        size_hint_y: None
+        height: self.texture_size[1]
+        text_size: self.width, None
+        text: root.avatext
+
+
+<TransportationScreen>:
+  name: "port"
+
+  GridLayout:
+    cols:1
+    rows:3
+    spacing: 3,3
+    
+    Label:
+      text: "Transportation"
+      font_size: 35
+      size_hint_y: 0.5
+    Button:
+      background_color: 0,0,0,0
+      on_release:
+        app.root.current= "car"
+      Image:
+        source:"carr.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size: 300,300
+    
+    Button:
+      background_color: 0,0,0,0
+      Image:
+        source:"bus.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size: 300,300
+
+
+
+<CarsScreen>:
+  name:"car"
+  GridLayout:
+    cols:1
+
+    Button:
+      text: "OXF"
+      background_color: 0,0,0,0
+      on_release:
+        import webbrowser
+        webbrowser.open("https://www.hertz.co.uk/")
+      Image:
+        source:"hertzcarslogo.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size: 230,230
+
+
+    Button:
+      text: "cambridg"
+      background_color: 0,0,0,0
+      on_release:
+        import webbrowser
+        webbrowser.open("https://www.avis.co.uk/")
+      Image:
+        source:"aviscarslogo.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size: 230,230
+
+    Button:
+      text: "manch"
+      background_color: 0,0,0,0
+      on_release:
+        import webbrowser
+        webbrowser.open("https://www.europcar.com/")
+      Image:
+        source:"europcarlogo.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size: 230,230
+
+
+
     
     
 

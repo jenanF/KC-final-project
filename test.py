@@ -6,7 +6,7 @@ import openai
 import pyttsx3
 
 
-openai.api_key = "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"
+openai.api_key = "sk"
 
 audioo = pyttsx3.init()
 

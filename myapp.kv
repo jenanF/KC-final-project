@@ -314,71 +314,70 @@ ScreenManager:
     spacing: 10,10
 
     Button:
-      name: "airways"
-      text: "airways"
-      on_release:
-        app.root.current= "airwayss"
+      background_color: 0,0,0,0
       Image:
         source:"vehicles.png"
         center_x: self.parent.center_x
         center_y: self.parent.center_y
-        size: 300,300
+        size: 190,190
     
     Button:
-      name: "information"
-      text: "airways"
+      background_color: 0,0,0,0
       Image:
         source:"cutlery.png"
         center_x: self.parent.center_x
         center_y: self.parent.center_y
-        size: 300,300
+        size: 190,190
     
     Button:
-      name: "money"
-      text: "airways"
-      on_release:
-        app.root.current= "convert"
+      background_color: 0,0,0,0
       Image:
-        source:"planetearth.png"
+        source:"mountains.png"
         center_x: self.parent.center_x
         center_y: self.parent.center_y
-        size: 300,300
+        size: 190,190
 
     Button:
-      name: "educat"
-      text: "airways"
+      background_color: 0,0,0,0
       Image:
         source:"hotel.png"
         center_x: self.parent.center_x
         center_y: self.parent.center_y
-        size: 300,300
+        size: 190,190
+
 
     Button:
-      name: "educat"
-      text: "airways"
-      Image:
-        source:"questionmark.png"
-        center_x: self.parent.center_x
-        center_y: self.parent.center_y
-        size: 300,300
-
-    Button:
-      name: "educat"
-      text: "airways"
+      background_color: 0,0,0,0
       Image:
         source:"museum.png"
         center_x: self.parent.center_x
         center_y: self.parent.center_y
-        size: 300,300
+        size: 190,190
 
     Button:
-      name: "educat"
-      text: "airways"
+      background_color: 0,0,0,0
+      center_x: self.parent.center_x
       Image:
         source:"travelguide.png"
         center_x: self.parent.center_x
         center_y: self.parent.center_y
-        size: 300,300
+        size: 190,190
+    
+    GridLayout:
+      cols:3
+      Button:
+        background_color: 0,0,0,0
+
+      Button:
+        background_color: 0,0,0,0
+        Image:
+          source:"questionmark.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 190,190
+
+      Button:
+        background_color: 0,0,0,0
 
 <EducatScreen>:
   name:"studies"
@@ -389,8 +388,7 @@ ScreenManager:
     spacing: 10,10
 
     Button:
-      name: "airways"
-      text: "airways"
+      background_color: 0,0,0,0
       on_release:
         app.root.current= "ukuni"
       Image:
@@ -400,7 +398,7 @@ ScreenManager:
         size: 500,500
     
     Button:
-      text: "airways"
+      background_color: 0,0,0,0
       Image:
         source:"schools.png"
         center_x: self.parent.center_x
@@ -414,6 +412,7 @@ ScreenManager:
 
     Button:
       text: "OXF"
+      background_color: 0,0,0,0
       on_release:
         app.root.current= "oxford"
       Image:
@@ -425,6 +424,7 @@ ScreenManager:
 
     Button:
       text: "cambridg"
+      background_color: 0,0,0,0
       Image:
         source:"cambridgelogo.png"
         center_x: self.parent.center_x
@@ -433,6 +433,7 @@ ScreenManager:
 
     Button:
       text: "manch"
+      background_color: 0,0,0,0
       Image:
         source:"cardifflogo.png"
         center_x: self.parent.center_x
@@ -445,17 +446,44 @@ ScreenManager:
 
   GridLayout:
     cols:1
-    BoxLayout:
-      oraintation: "vertical"
-      Label:
-        text: "University Of Oxford"
+
   
-      Image:
-        source:"Oxforduni.jpg"
-        size:200,200
+    Image:
+      source:"Oxforduni.jpg"
+      size:200,200
+
+    GridLayout:
+      cols:2
+      rows:1
+      size_hint_y: 0.3
+
+      Button:
+        
+        background_color: 0,0,0,0
+        on_release:
+          import webbrowser
+          webbrowser.open("https://goo.gl/maps/u7sv4fhHwx26Lpnd8")
+        Image:
+          source:"googlemaps.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 100,100
+
+      Button:
+        
+        background_color: 0,0,0,0
+        on_release:
+          import webbrowser
+          webbrowser.open("https://www.ox.ac.uk/")
+        Image:
+          source:"worldweb.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 100,100
+
     
     ScrollView:
-      padding:5
+      padding_left:20
       Label:
         size_hint_y: None
         height: self.texture_size[1]

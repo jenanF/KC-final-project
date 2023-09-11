@@ -14,6 +14,8 @@ from kivy.uix.tabbedpanel import TabbedPanel
 import webbrowser
 import speech_recognition as sp
 import pyttsx3
+import openai
+
 
 
 
@@ -41,15 +43,6 @@ def currncy(page):
 
 
 currncy(currencies)
-
-
-class CurrnciesScreen(Screen):
-    src = currencies.content
-    soup = BeautifulSoup(src, "lxml")
-    #test = soup.find('tbody', {'class' : 'data-table-body'}).text
-   # title_curncy = StringProperty(soup.find('th', {'class' : 'data-table-headers-cell'}).text)
-   # title_value = soup.find_all('tr', {'class' : 'data-table-headers'})[0].children
-   # print(title_value)
 
 class ConvertorScreen(Screen):
 
@@ -86,9 +79,7 @@ class UniUkScreen(Screen):
 
 class OxfordScreen(Screen):#done
     oxftext = '''The University of Oxford is a collegiate research university in Oxford, England.There is evidence of teaching as early as 1096,making it the oldest university in the English-speaking world and the world's second-oldest university in continuous operation.It grew rapidly from 1167 when Henry II banned English students from attending the University of Paris.After disputes between students and Oxford townsfolk in 1209, some academics fled north-east to Cambridge where they established what became the University of Cambridge.The two English ancient universities share many common features and are jointly referred to as Oxbridge. The university is made up of thirty-nine semi-autonomous constituent colleges, four permanent private halls, and a range of academic departments which are organised into four divisions.All the colleges are self-governing institutions within the university, each controlling its own membership and with its own internal structure and activities. All students are members of a college. It does not have a main campus, and its buildings and facilities are scattered throughout the city centre. Undergraduate teaching at Oxford consists of lectures, small-group tutorials at the colleges and halls, seminars, laboratory work and occasionally further tutorials provided by the central university faculties and departments. Postgraduate teaching is provided in a predominantly centralized fashion. Oxford operates the Ashmolean Museum, the world's oldest university museum; Oxford University Press, the largest university press in the world; and the largest academic library system nationwide.In the fiscal year ending 31 July 2022, the university had a total consolidated income of £2.78 billion, of which £711.4 million was from research grants and contracts. Oxford has educated a wide range of notable alumni, including 30 prime ministers of the United Kingdom and many heads of state and government around the world.As of October 2022, 73 Nobel Prize laureates, 4 Fields Medalists, and 6 Turing Award winners have matriculated, worked, or held visiting fellowships at the University of Oxford, while its alumni have won 160 Olympic medals. Oxford is the home of numerous scholarships, including the Rhodes Scholarship, one of the oldest international graduate scholarship programmes.'''
-    def openweb():
-      webbrowser.open("https://goo.gl/maps/u7sv4fhHwx26Lpnd8")
-
+    
 
 class HotelsScreen(Screen):#DONE
     pass
@@ -126,8 +117,76 @@ class TransportationScreen(Screen):
 class CarsScreen(Screen):
     pass
 
+
+openai.api_key = "sk"
+
+audioo = pyttsx3.init()
+
+def audioTotext(name):
+    listener = sp.Recognizer()
+
+    with sp.AudioFile(name) as source:
+        audio = listener.record(source)
+    try:
+        return listener.recognize_google(audio)
+    except:
+        print("unknown error")
+
+def answer(question):
+    response = openai.Completion.create(
+        engine = "text-davinci-003",
+        prompt=question,
+        max_tokens=4000,
+        n=1,
+       stop=None,
+       temperature=0.5    
+    )
+    return response['choices'][0]['text']
+
+def speakit(text):
+    audioo.say(text)
+    audioo.runAndWait()
+
 class SiriScreen(Screen):
-    pass
+
+     def main(self):
+       while True:
+          print("say (hello) and go ahead...")
+          btn = self.ids.mic
+          lab = self.ids.sayhey
+          btn.source = "microphonerecord.png"
+          lab.text = "say (hello) and go ahead..."
+          with sp.Microphone() as source:
+              listener = sp.Recognizer()
+              audio = listener.listen(source)
+              try:
+                  script = listener.recognize_google(audio)
+                  if script.lower() == 'hello':
+                      name = 'input.wav'
+                      print('go ahead im listening...')
+                      lab.text = 'go ahead im listening...'
+                      with sp.Microphone() as source:
+                          listener = sp.Recognizer()
+                          source.pause_threshold = 1
+                          audio = listener.listen(source, phrase_time_limit=None, timeout=None)
+                          with open(name, 'wb') as f:
+                             f.write(audio.get_wav_data())
+
+                      text = audioTotext(name)
+                      if text:
+                        print('you said:', text )
+
+                        response = answer(text)
+                        print('Hello said:', response)
+                        lab.text = 'Hello said:', response
+
+                        speakit(response)
+                  elif text == 'stop':
+                    break
+
+              except Exception as e:
+                 print('error: {}'.format(e))
+                 lab.text = 'error: {}'.format(e)
 '''
     listener = sp.Recognizer()
     audio = pyttsx3.init()

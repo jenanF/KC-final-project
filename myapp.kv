@@ -14,6 +14,7 @@ ScreenManager:
   CarsScreen:
   DakotaHotelScreen:
   LondonHotelScreen:
+  SiriScreen:
 
 <MainWidget>:
   GridLayout:
@@ -443,6 +444,9 @@ ScreenManager:
 
     Button:
       background_color: 0,0,0,0
+      on_release:
+        app.root.current= "siri"
+        root.manager.transition.direction = "right"
       Image:
         source:"questionmark.png"
         center_x: self.parent.center_x
@@ -967,6 +971,21 @@ ScreenManager:
         height: self.texture_size[1]
         text_size: self.width, None
         text: root.lontext
+
+<SiriScreen>:
+  name: "siri"
+  GridLayout:
+    cols:1
+    Button:
+      on_press: root.reco()
+      Image:
+        source: "microphone.png"
+        id: mic
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+    Label:
+      id: sayhey
+  
 
     
     

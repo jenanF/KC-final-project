@@ -154,6 +154,18 @@ Originally developed by the Peel Group, the Trafford Centre was sold to Capital 
 The battle to obtain permission to build the centre was amongst the longest and most expensive in United Kingdom planning history. As of 2011 the Trafford Centre had Europe's largest food court and the UK's busiest cinema'''
 
 
+class ParksScreen(Screen):
+    pass
+
+class BlackpoolScreen(Screen):
+    pooltext = '''Blackpool Pleasure Beach first opened to the public in 1896 in Lancashire. The theme park is home to 10 roller coasters including ICON, the park’s newest and fastest.
+
+Additional thrill rides include Valhalla, The Big One, Revolution, Ice Blast and The Big Dipper. As well as the UK’s only Nickelodeon Land, family-friendly offerings at Blackpool Pleasure Beach comprise Wallace & Gromit’s Thrill-O-Matic, an Alice in Wonderland-themed ride and the Flying Machines.
+
+Blackpool Pleasure Beach’s second hotel opened in July 2019. BLVD sits to the left of the Big Blue Hotel, which launched at the UK amusement park in 2003.
+
+Blackpool Pleasure Beach features a new app to enhance the visitor experience with planning details including queue times. It can be used to store and access e-tickets, book rides on ENSŌ, and purchase ‘Speedy Ones’ fast passes.'''
+
 openai.api_key = "sk" #the api link becomes un activie after uploading it on github but you can see on the demo that it works with no problem
 
 audioo = pyttsx3.init()

@@ -18,7 +18,10 @@ ScreenManager:
   GuideScreen:
   MuseumsScreen:
   NaturalMuseumScreen:
+  MallsScreen:
   TraffodMallScreen:
+  ParksScreen:
+  BlackpoolScreen:
 
 <MainWidget>:
   GridLayout:
@@ -1073,7 +1076,7 @@ ScreenManager:
       Button:
         background_color: 0,0,0,0
         on_release:
-          app.root.current = "traf"
+          app.root.current = "malls"
           root.manager.transition.direction = "left"
         Image:
           source:"mall.png"
@@ -1083,6 +1086,9 @@ ScreenManager:
 
       Button:
         background_color: 0,0,0,0
+        on_release:
+          app.root.current = "park"
+          root.manager.transition.direction = "left"
         Image:
           source:"amusementpark.png"
           center_x: self.parent.center_x
@@ -1212,6 +1218,92 @@ ScreenManager:
         center_x: self.parent.center_x
         center_y: self.parent.center_y
 
+
+<MallsScreen>:
+  name: "malls"
+
+  GridLayout:
+    cols:1
+
+    GridLayout:
+      cols:3
+      size_hint_y: 0.5
+      Button:
+        background_color: 0,0,0,0
+        on_release:
+          app.root.current= "guide"
+          root.manager.transition.direction = "right"
+        Image:
+          source:"backgo.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 100,100
+      Button:
+        background_color: 0,0,0,0
+      Button:
+        background_color: 0,0,0,0
+
+
+    Button:
+      text: "cambridg"
+      background_color: 0,0,0,0
+      on_release:
+        app.root.current= "traf"
+        root.manager.transition.direction = "left"
+      Label:
+        text: "The Trafford Centre"
+        font_size: 50
+        size: 500,80
+        background_color: 255, 255, 255, 0.8
+        color: 0, 0, 0, 0.85
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        canvas.before:
+          Color:
+            rgba: self.background_color
+          Rectangle:
+            size: self.size 
+            pos: self.pos
+
+
+    Button:
+      text: "OXF"
+      background_color: 0,0,0,0
+      Label:
+        text: "Swindon Designer Outlet"
+        font_size: 40
+        size: 500,80
+        background_color: 255, 255, 255, 0.8
+        color: 0, 0, 0, 0.85
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        canvas.before:
+          Color:
+            rgba: self.background_color
+          Rectangle:
+            size: self.size 
+            pos: self.pos
+
+    Button:
+      text: "manch"
+      background_color: 0,0,0,0
+      Label:
+        text: "Westfield London"
+        font_size: 50
+        size: 500,80
+        background_color: 255, 255, 255, 0.8
+        color: 0, 0, 0, 0.85
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        canvas.before:
+          Color:
+            rgba: self.background_color
+          Rectangle:
+            size: self.size 
+            pos: self.pos
+
+
+
 <TraffodMallScreen>:
   name: "traf"
 
@@ -1279,7 +1371,159 @@ ScreenManager:
         center_y: self.parent.center_y
 
 
+<ParksScreen>:
+  name: "park"
+  GridLayout:
+    cols:1
+
+    GridLayout:
+      cols:3
+      size_hint_y: 0.5
+      Button:
+        background_color: 0,0,0,0
+        on_release:
+          app.root.current= "guide"
+          root.manager.transition.direction = "right"
+        Image:
+          source:"backgo.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 100,100
+      Button:
+        background_color: 0,0,0,0
+      Button:
+        background_color: 0,0,0,0
+
+
+    Button:
+      text: "cambridg"
+      background_color: 0,0,0,0
+      on_release:
+        app.root.current= "pool"
+        root.manager.transition.direction = "left"
+      Label:
+        text: "Blackpool Pleasure Beach"
+        font_size: 40
+        size: 500,80
+        background_color: 255, 255, 255, 0.8
+        color: 0, 0, 0, 0.85
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        canvas.before:
+          Color:
+            rgba: self.background_color
+          Rectangle:
+            size: self.size 
+            pos: self.pos
+
+
+    Button:
+      text: "OXF"
+      background_color: 0,0,0,0
+      Label:
+        text: "Fantasy Island"
+        font_size: 40
+        size: 500,80
+        background_color: 255, 255, 255, 0.8
+        color: 0, 0, 0, 0.85
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        canvas.before:
+          Color:
+            rgba: self.background_color
+          Rectangle:
+            size: self.size 
+            pos: self.pos
+
+    Button:
+      text: "manch"
+      background_color: 0,0,0,0
+      Label:
+        text: "Flamingo Land Resort"
+        font_size: 40
+        size: 500,80
+        background_color: 255, 255, 255, 0.8
+        color: 0, 0, 0, 0.85
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        canvas.before:
+          Color:
+            rgba: self.background_color
+          Rectangle:
+            size: self.size 
+            pos: self.pos
   
+
+<BlackpoolScreen>:
+  name:"pool"
+
+  GridLayout:
+    cols:1
+    spacing:10,4
+    GridLayout:
+      cols:3
+      spacing: 20,1
+      size_hint_y: 0.3
+      Button:
+        background_color: 0,0,0,0
+        on_release:
+          app.root.current= "park"
+          root.manager.transition.direction = "right"
+        Image:
+          source:"backgo.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 100,100
+      Label:
+        text: "Blackpool Pleasure Beach"
+        font_size: 25
+      Button:
+        background_color: 0,0,0,0
+      
+
+    ScrollView:
+      do_scroll_x: True
+      do_scroll_y: False
+      BoxLayout:
+        size_hint_y: None
+        size_hint_x: None
+        size: 2000,400
+
+        Image:
+          source: "blackpoolpleasure.jpg"
+          size: 1000,1000
+
+        Image:
+          source: "BlackpoolPleasureBeach.jpg"
+          size: 100,100
+
+        Image:
+          source: "beachblackpool.jpg"
+          size: 100,100
+
+        Image:
+          source: "nickblackpool.jpg"
+          size: 100,100
+
+    ScrollView:
+      padding_left:20
+      Label:
+        size_hint_y: None
+        height: self.texture_size[1]
+        text_size: self.width, None
+        text: root.pooltext
+
+    Button:
+      background_color: 0,0,0,0 
+      size_hint: 0.3,0.3
+      on_release:
+        import webbrowser
+        webbrowser.open("https://goo.gl/maps/oojkJMr69dmjq6H59")
+      Image:
+        source: "googlemaps.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+
 
     
     

@@ -131,6 +131,28 @@ class CarsScreen(Screen):
 class GuideScreen(Screen):
     pass
 
+class NaturalMuseumScreen(Screen):
+    mustext = '''The Natural History Museum in London is a museum that exhibits a vast range of specimens from various segments of natural history. It is one of three major museums on Exhibition Road in South Kensington, the others being the Science Museum and the Victoria and Albert Museum. The Natural History Museum's main frontage, however, is on Cromwell Road.
+
+The museum is home to life and earth science specimens comprising some 80 million items within five main collections: botany, entomology, mineralogy, palaeontology and zoology. The museum is a centre of research specialising in taxonomy, identification and conservation. Given the age of the institution, many of the collections have great historical as well as scientific value, such as specimens collected by Charles Darwin. The museum is particularly famous for its exhibition of dinosaur skeletons and ornate architecture—sometimes dubbed a cathedral of nature—both exemplified by the large Diplodocus cast that dominated the vaulted central hall before it was replaced in 2017 with the skeleton of a blue whale hanging from the ceiling. The Natural History Museum Library contains an extensive collection of books, journals, manuscripts, and artwork linked to the work and research of the scientific departments; access to the library is by appointment only. The museum is recognised as the pre-eminent centre of natural history and research of related fields in the world.
+
+Although commonly referred to as the Natural History Museum, it was officially known as British Museum (Natural History) until 1992, despite legal separation from the British Museum itself in 1963. Originating from collections within the British Museum, the landmark Alfred Waterhouse building was built and opened by 1881 and later incorporated the Geological Museum. The Darwin Centre is a more recent addition, partly designed as a modern facility for storing the valuable collections.
+
+Like other publicly funded national museums in the United Kingdom, the Natural History Museum does not charge an admission fee. The museum is an exempt charity and a non-departmental public body sponsored by the Department for Culture, Media and Sport. The Princess of Wales is a patron of the museum. There are approximately 850 staff at the museum. The two largest strategic groups are the Public Engagement Group and Science Group.'''
+
+class MuseumsScreen(Screen):
+    pass
+
+class MallsScreen(Screen):
+    pass
+
+class TraffodMallScreen(Screen):
+    tratext = '''The Trafford Centre is a large indoor shopping centre and entertainment complex in Urmston, Greater Manchester, England. It opened in 1998 and is third largest in the United Kingdom by retail space.
+
+Originally developed by the Peel Group, the Trafford Centre was sold to Capital Shopping Centres, later to become Intu, in 2011 for £1.65 billion setting a record as the costliest single property sale in British history.
+
+The battle to obtain permission to build the centre was amongst the longest and most expensive in United Kingdom planning history. As of 2011 the Trafford Centre had Europe's largest food court and the UK's busiest cinema'''
+
 
 openai.api_key = "sk" #the api link becomes un activie after uploading it on github but you can see on the demo that it works with no problem
 

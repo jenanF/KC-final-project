@@ -16,6 +16,9 @@ ScreenManager:
   SiriScreen:
   CambridgeScreen:
   GuideScreen:
+  MuseumsScreen:
+  NaturalMuseumScreen:
+  TraffodMallScreen:
 
 <MainWidget>:
   GridLayout:
@@ -1047,6 +1050,9 @@ ScreenManager:
 
       Button:
         background_color: 0,0,0,0
+        on_release:
+          import webbrowser
+          webbrowser.open("https://www.squaremeal.co.uk/restaurants/best/uk-top-100-restaurants_238")
         Image:
           source:"cutlery.png"
           center_x: self.parent.center_x
@@ -1055,6 +1061,9 @@ ScreenManager:
 
       Button:
         background_color: 0,0,0,0
+        on_release:
+          app.root.current= "mus"
+          root.manager.transition.direction = "left"
         Image:
           source:"museum.png"
           center_x: self.parent.center_x
@@ -1063,8 +1072,11 @@ ScreenManager:
 
       Button:
         background_color: 0,0,0,0
+        on_release:
+          app.root.current = "traf"
+          root.manager.transition.direction = "left"
         Image:
-          source:"shoppingmall.png"
+          source:"mall.png"
           center_x: self.parent.center_x
           center_y: self.parent.center_y
           size: 200,200
@@ -1076,6 +1088,196 @@ ScreenManager:
           center_x: self.parent.center_x
           center_y: self.parent.center_y
           size: 200,200
+
+<MuseumsScreen>:
+  name: "mus"
+  GridLayout:
+    cols:1
+
+    GridLayout:
+      cols:3
+      size_hint_y: 0.5
+      Button:
+        background_color: 0,0,0,0
+        on_release:
+          app.root.current= "guide"
+          root.manager.transition.direction = "right"
+        Image:
+          source:"backgo.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 100,100
+      Button:
+        background_color: 0,0,0,0
+      Button:
+        background_color: 0,0,0,0
+
+    Button:
+      
+      background_color: 0,0,0,0
+      on_release:
+        app.root.current= "nat"
+      Image:
+        source:"NaturalHistoryMuseumlogo.jpg"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size: 300,300
+
+
+    Button:
+      background_color: 0,0,0,0
+      Image:
+        source:"slaverymuseumlogo.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size: 300,300
+
+    Button:
+      background_color: 0,0,0,0
+      Image:
+        source:"bclmlogo.jpg"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+        size: 300,300
+
+
+
+
+<NaturalMuseumScreen>:
+  name:"nat"
+  GridLayout:
+    cols:1
+    spacing:10,4
+    GridLayout:
+      cols:3
+      spacing: 20,1
+      size_hint_y: 0.3
+      Button:
+        background_color: 0,0,0,0
+        on_release:
+          app.root.current= "mus"
+          root.manager.transition.direction = "right"
+        Image:
+          source:"backgo.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 100,100
+      Label:
+        text: "Natural History Museum"
+        font_size: 25
+      Button:
+        background_color: 0,0,0,0
+      
+
+    ScrollView:
+      do_scroll_x: True
+      do_scroll_y: False
+      BoxLayout:
+        size_hint_y: None
+        size_hint_x: None
+        size: 2000,400
+
+        Image:
+          source: "NaturalHistoryMuseumLondon.jpg"
+          size: 1000,1000
+
+        Image:
+          source: "naturalhistorymuseumblue.jpg"
+          size: 100,100
+
+        Image:
+          source: "dcMuseumOfNaturalHistory.jpg"
+          size: 100,100
+
+        Image:
+          source: "naturalhistorymuseumhol.jpg"
+          size: 100,100
+
+    ScrollView:
+      padding_left:20
+      Label:
+        size_hint_y: None
+        height: self.texture_size[1]
+        text_size: self.width, None
+        text: root.mustext
+
+    Button:
+      background_color: 0,0,0,0 
+      size_hint: 0.3,0.3
+      on_release:
+        import webbrowser
+        webbrowser.open("https://goo.gl/maps/oNkxSdew289QE2gy7")
+      Image:
+        source: "googlemaps.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+
+<TraffodMallScreen>:
+  name: "traf"
+
+  GridLayout:
+    cols:1
+    spacing:10,4
+    GridLayout:
+      cols:3
+      spacing: 20,1
+      size_hint_y: 0.3
+      Button:
+        background_color: 0,0,0,0
+        on_release:
+          app.root.current= "guide"
+          root.manager.transition.direction = "right"
+        Image:
+          source:"backgo.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 100,100
+      Label:
+        text: "The Trafford Centre"
+        font_size: 25
+      Button:
+        background_color: 0,0,0,0
+      
+
+    ScrollView:
+      do_scroll_x: True
+      do_scroll_y: False
+      BoxLayout:
+        size_hint_y: None
+        size_hint_x: None
+        size: 2000,400
+
+        Image:
+          source: "traffodmall.jpg"
+          size: 1000,1000
+
+        Image:
+          source: "traffodmals.jpg"
+          size: 100,100
+
+        Image:
+          source: "thetraffordcentres.jpg"
+          size: 100,100
+
+    ScrollView:
+      padding_left:20
+      Label:
+        size_hint_y: None
+        height: self.texture_size[1]
+        text_size: self.width, None
+        text: root.tratext
+
+    Button:
+      background_color: 0,0,0,0 
+      size_hint: 0.3,0.3
+      on_release:
+        import webbrowser
+        webbrowser.open("https://goo.gl/maps/tUzpWf5m8KWsdAex5")
+      Image:
+        source: "googlemaps.png"
+        center_x: self.parent.center_x
+        center_y: self.parent.center_y
+
 
   
 

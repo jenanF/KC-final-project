@@ -17,7 +17,10 @@ Next Destination
 # الأعمال المستقبلية
 /اضافة خرائط 
 /اضافة دول اكثر
-اضافة خاصية تسجيل الدخول
+/اضافة خاصية تسجيل الدخول
+/اضافة اختبار يساعد المستخدم على تحديد الوجهة
+
+# the api link becomes un activie after uploading it on github but you can see on the demo that it works with no problem
 
 </div>
 

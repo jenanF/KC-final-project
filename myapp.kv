@@ -1,7 +1,6 @@
 ScreenManager:
   MainWidget:
   UkScreen:
-  CurrnciesScreen:
   ConvertorScreen:
   AirwaysScreen:
   LocationsScreen:
@@ -15,6 +14,8 @@ ScreenManager:
   DakotaHotelScreen:
   LondonHotelScreen:
   SiriScreen:
+  CambridgeScreen:
+  GuideScreen:
 
 <MainWidget>:
   GridLayout:
@@ -170,66 +171,6 @@ ScreenManager:
         center_y: self.parent.center_y
         size: 300,300
 
-
-<CurrnciesScreen>:
-  name: "curncy"
-  GridLayout:
-    cols:5
-    rows:12
-
-    #Label:
-      #text:root.title_curncy
-
-    Label:
-      text:"python"
-
-    Label:
-      text:"jenan"
-
-    Label:
-      text:"great"
-
-    Label:
-      text:"hello"
-
-    Label:
-      text:"cooks"
-
-    Label:
-      text:"python"
-
-    Label:
-      text:"python"
-
-    Label:
-      text:"python"
-
-    Label:
-      text:"python"
-
-    Label:
-      text:"python"
-
-    Label:
-      text:"python"
-
-    Label:
-      text:"python"
-
-    Label:
-      text:"python"
-
-    Label:
-      text:"python"
-
-    Label:
-      text:"python"
-
-    Label:
-      text:"python"
-
-    Label:
-      text:"python"
 
 <ConvertorScreen>:
   name: "convert"
@@ -434,6 +375,9 @@ ScreenManager:
     Button:
       background_color: 0,0,0,0
       center_x: self.parent.center_x
+      on_release:
+        app.root.current= "guide"
+        root.manager.transition.direction = "left"
       Image:
         source:"travelguide.png"
         center_x: self.parent.center_x
@@ -446,7 +390,7 @@ ScreenManager:
       background_color: 0,0,0,0
       on_release:
         app.root.current= "siri"
-        root.manager.transition.direction = "right"
+        root.manager.transition.direction = "left"
       Image:
         source:"questionmark.png"
         center_x: self.parent.center_x
@@ -976,15 +920,163 @@ ScreenManager:
   name: "siri"
   GridLayout:
     cols:1
+    GridLayout:
+      cols:3
+      size_hint_y: 0.5
+
+      Button:
+        background_color: 0,0,0,0
+        on_release:
+          app.root.current= "locations"
+          root.manager.transition.direction = "right"
+        Image:
+          source: "backgo.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+      Button:
+        background_color: 0,0,0,0
+      Button:
+        background_color: 0,0,0,0
+
     Button:
-      on_press: root.reco()
+      background_color: 0,0,0,0
+      on_press: root.main()
       Image:
         source: "microphone.png"
         id: mic
+        size: 300,300
         center_x: self.parent.center_x
         center_y: self.parent.center_y
     Label:
       id: sayhey
+      text:"press the button and say (hello) and go ahead..."
+
+
+<CambridgeScreen>:
+  name:'ca'
+
+  GridLayout:
+    cols:1
+
+    GridLayout:
+      cols:3
+      size_hint_y: 0.3
+      Button:
+        background_color: 0,0,0,0
+        on_release:
+          app.root.current= "ukuni"
+          root.manager.transition.direction = "right"
+        Image:
+          source:"backgo.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 100,100
+      Button:
+        background_color: 0,0,0,0
+      Button:
+        background_color: 0,0,0,0
+
+  
+    Image:
+      source:"cambridgeuni.jpg"
+      size:200,200
+
+    GridLayout:
+      cols:2
+      rows:1
+      size_hint_y: 0.3
+
+      Button:
+        
+        background_color: 0,0,0,0
+        on_release:
+          import webbrowser
+          webbrowser.open("https://goo.gl/maps/u7sv4fhHwx26Lpnd8")
+        Image:
+          source:"googlemaps.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 100,100
+
+      Button:
+        
+        background_color: 0,0,0,0
+        on_release:
+          import webbrowser
+          webbrowser.open("https://www.cam.ac.uk/")
+        Image:
+          source:"worldweb.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 100,100
+
+    
+    ScrollView:
+      padding_left:20
+      Label:
+        size_hint_y: None
+        height: self.texture_size[1]
+        text_size: self.width, None
+        text: root.camtext
+
+<GuideScreen>:
+  name: "guide"
+  GridLayout:
+    cols:1
+
+    GridLayout:
+      cols:3
+      size_hint_y: 0.3
+      Button:
+        background_color: 0,0,0,0
+        on_release:
+          app.root.current= "locations"
+          root.manager.transition.direction = "right"
+        Image:
+          source:"backgo.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 100,100
+      Label:
+        text: "GUIDE"
+        font_size: 60
+      Button:
+        background_color: 0,0,0,0
+    GridLayout:
+      cols:2
+
+      Button:
+        background_color: 0,0,0,0
+        Image:
+          source:"cutlery.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 200,200
+
+      Button:
+        background_color: 0,0,0,0
+        Image:
+          source:"museum.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 200,200
+
+      Button:
+        background_color: 0,0,0,0
+        Image:
+          source:"shoppingmall.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 200,200
+
+      Button:
+        background_color: 0,0,0,0
+        Image:
+          source:"amusementpark.png"
+          center_x: self.parent.center_x
+          center_y: self.parent.center_y
+          size: 200,200
+
   
 
     

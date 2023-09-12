@@ -81,6 +81,17 @@ class OxfordScreen(Screen):#done
     oxftext = '''The University of Oxford is a collegiate research university in Oxford, England.There is evidence of teaching as early as 1096,making it the oldest university in the English-speaking world and the world's second-oldest university in continuous operation.It grew rapidly from 1167 when Henry II banned English students from attending the University of Paris.After disputes between students and Oxford townsfolk in 1209, some academics fled north-east to Cambridge where they established what became the University of Cambridge.The two English ancient universities share many common features and are jointly referred to as Oxbridge. The university is made up of thirty-nine semi-autonomous constituent colleges, four permanent private halls, and a range of academic departments which are organised into four divisions.All the colleges are self-governing institutions within the university, each controlling its own membership and with its own internal structure and activities. All students are members of a college. It does not have a main campus, and its buildings and facilities are scattered throughout the city centre. Undergraduate teaching at Oxford consists of lectures, small-group tutorials at the colleges and halls, seminars, laboratory work and occasionally further tutorials provided by the central university faculties and departments. Postgraduate teaching is provided in a predominantly centralized fashion. Oxford operates the Ashmolean Museum, the world's oldest university museum; Oxford University Press, the largest university press in the world; and the largest academic library system nationwide.In the fiscal year ending 31 July 2022, the university had a total consolidated income of £2.78 billion, of which £711.4 million was from research grants and contracts. Oxford has educated a wide range of notable alumni, including 30 prime ministers of the United Kingdom and many heads of state and government around the world.As of October 2022, 73 Nobel Prize laureates, 4 Fields Medalists, and 6 Turing Award winners have matriculated, worked, or held visiting fellowships at the University of Oxford, while its alumni have won 160 Olympic medals. Oxford is the home of numerous scholarships, including the Rhodes Scholarship, one of the oldest international graduate scholarship programmes.'''
     
 
+class CambridgeScreen(Screen):
+    camtext = '''The University of Cambridge is a public collegiate research university in Cambridge, England. Founded in 1209, the University of Cambridge is the world's third-oldest university in continuous operation.
+
+The university's founding followed the arrival of scholars who left the University of Oxford for Cambridge after a dispute with local townspeople.The two ancient English universities, although sometimes described as rivals, share many common features and are often jointly referred to as Oxbridge. In 1231, 22 years after its founding, the university was recognised with a royal charter granted by King Henry III.
+
+The University of Cambridge includes 31 semi-autonomous constituent colleges and over 150 academic departments, faculties, and other institutions organised into six schools. All of the colleges are self-governing institutions within the university, managing their own personnel and policies, and all students are required to have a college affiliation within the university. Undergraduate teaching at Cambridge is centred on weekly small-group supervisions in the colleges with lectures, seminars, laboratory work, and occasionally further supervision provided by the central university faculties and departments.
+
+The university operates eight cultural and scientific museums, including the Fitzwilliam Museum and Cambridge University Botanic Garden. Cambridge's 116 libraries hold a total of approximately 16 million books, around nine million of which are in Cambridge University Library, a legal deposit library and one of the world's largest academic libraries.
+
+Cambridge alumni, academics, and affiliates have won 121 Nobel Prizes. Among the university's notable alumni are 194 Olympic medal-winning athletesand several historically iconic and transformational individuals in their respective fields, including Francis Bacon, Lord Byron, Oliver Cromwell, Charles Darwin, Stephen Hawking, John Maynard Keynes, John Milton, Vladimir Nabokov, Jawaharlal Nehru, Isaac Newton, Bertrand Russell, Alan Turing, and Ludwig Wittgenstein.'''
+
 class HotelsScreen(Screen):#DONE
     pass
 
@@ -117,8 +128,11 @@ class TransportationScreen(Screen):
 class CarsScreen(Screen):
     pass
 
+class GuideScreen(Screen):
+    pass
 
-openai.api_key = "sk"
+
+openai.api_key = "sk" #the api link becomes un activie after uploading it on github but you can see on the demo that it works with no problem
 
 audioo = pyttsx3.init()
 
@@ -152,10 +166,6 @@ class SiriScreen(Screen):
      def main(self):
        while True:
           print("say (hello) and go ahead...")
-          btn = self.ids.mic
-          lab = self.ids.sayhey
-          btn.source = "microphonerecord.png"
-          lab.text = "say (hello) and go ahead..."
           with sp.Microphone() as source:
               listener = sp.Recognizer()
               audio = listener.listen(source)
@@ -164,7 +174,6 @@ class SiriScreen(Screen):
                   if script.lower() == 'hello':
                       name = 'input.wav'
                       print('go ahead im listening...')
-                      lab.text = 'go ahead im listening...'
                       with sp.Microphone() as source:
                           listener = sp.Recognizer()
                           source.pause_threshold = 1
@@ -178,36 +187,13 @@ class SiriScreen(Screen):
 
                         response = answer(text)
                         print('Hello said:', response)
-                        lab.text = 'Hello said:', response
-
+                        
                         speakit(response)
                   elif text == 'stop':
                     break
 
               except Exception as e:
                  print('error: {}'.format(e))
-                 lab.text = 'error: {}'.format(e)
-'''
-    listener = sp.Recognizer()
-    audio = pyttsx3.init()
-    voices = audio.getProperty('voices')
-    audio.setProperty('voice', voices[1].id)
-    def sayit(text):
-        audio = pyttsx3.init()
-        audio.say(text)
-        audio.runAndWait()
-    try:
-        with sp.Microphone() as source:
-            print("go ahead...")
-            voicee = listener.listen(source)
-            request = listener.recognize_google(voicee)
-            print(request)
-            sayit(request)
-            audio.say(request)
-            
-    except:
-        pass
-'''
 
 class ScreenManager(ScreenManager):
     pass

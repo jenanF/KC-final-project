@@ -1,7 +1,5 @@
 import time
 import speech_recognition as sp
-#import playsound
-#import os
 import openai
 import pyttsx3
 
